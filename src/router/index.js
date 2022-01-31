@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Page from '../views/Page.vue'
+import Upload from '../views/Upload.vue'
 
 const routes = [
   {
@@ -9,9 +10,14 @@ const routes = [
     component: Home
   },
   {
-    path: '/nft',
-    name: 'About',
+    path: '/nft/:name',
+    name: 'Page',
     component: Page
+  },
+  {
+    path: '/upload-project',
+    name: 'Upload',
+    component: Upload
   }
 ]
 

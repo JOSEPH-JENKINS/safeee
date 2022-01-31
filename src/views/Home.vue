@@ -12,11 +12,11 @@
           <div class="buttons-container">
             <form @submit="searchForm">
               <div class="field">
-                <input type="text" v-model="searchText" placeholder="Search For A NFT Project">
+                <input type="text" v-model="searchText" placeholder="SEARCH FOR A NFT PROJECT">
                 <button type="submit">&rarr;</button>
               </div>
             </form>
-            <router-link to='/' class="upload">UPLOAD A PROJECT</router-link>
+            <router-link to='/upload-project' class="upload">UPLOAD A PROJECT</router-link>
           </div>
         </div>
       </div>
@@ -36,10 +36,7 @@ export default {
     searchForm: function (e) {
       e.preventDefault();
       this.$router.push({
-        path: '/nft',
-        params: {
-          name: this.searchText,
-        }
+        path: `/nft/${this.searchText}`
       });
     }
   }
@@ -129,7 +126,6 @@ export default {
   font-size: 20px;
   color: #fafafa;
   font-family: 'Arimo', sans-serif;
-  text-transform: uppercase;
 }
 
 .field input::placeholder{
